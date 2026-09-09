@@ -81,6 +81,8 @@ System.out.print("Enter first name: ");
             System.out.print("Last name cannot be empty. Enter last name: ");
             lastName = input.nextLine().trim();
         }
+        login.setFirstName(firstName);
+        login.setLastName(lastName);
 
         String username = captureUntilValid(
                 input,
