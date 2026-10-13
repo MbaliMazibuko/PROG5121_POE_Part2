@@ -128,6 +128,9 @@ System.out.print("Enter first name: ");
 
         if (success) {
             System.out.println("Login successful: " + login.getFullName());
+            if (success) {
+            quickChatMenu(input);
+        }
         }
     }
 
@@ -143,9 +146,79 @@ System.out.print("Enter first name: ");
             if (checker.test(value)) {
                 return value;
             }
+     private static void quickChatMenu(Scanner input){
+        System.out.println("Welcome to QuickChat.");
+        boolean inChat = true;
+
+        while (inChat) {
+            System.out.println();
+            System.out.println("1) Send Messages");
+            System.out.println("2) Show recently sent messages");
+            System.out.println("3) Quit");
+            System.out.print("Select an option: ");
+            String choice = input.nextLine().trim();
+
+            if (choice.equals("1")) {
+                sendMessages(input);
+            } else if (choice.equals("2")) {
+                System.out.println("Coming Soon.");
+            } else if (choice.equals("3")) {
+                inChat = false;
+            } else {
+                System.out.println("Invalid option. Please enter 1, 2 or 3.");
+            }
         }
     }
-}
+
+    private static void sendMessages(Scanner input) {
+        System.out.print("How many messages do you want to send? ");
+        int limit = Integer.parseInt(input.nextLine().trim());
+        Message tracker = new Message();
+
+        for (int i = 0; i < limit; i++) {
+            System.out.println();
+            System.out.println("Message " + (i + 1) + " of " + limit);
+
+            Message current = new Message();
+            current.setMessageNumber(i);
+            System.out.println("Message ID generated: " + current.getMessageID());
+
+            String cellMessage = "";
+            while (!cellMessage.equals("Cell phone number successfully captured.")) {
+                System.out.print("Enter recipient cell number (example +27718693002): ");
+                String cell = input.nextLine().trim();
+                cellMessage = current.checkRecipientCell(cell);
+                System.out.println(cellMessage);
+            }
+
+            String lengthMessage = "";
+            while (!lengthMessage.equals("Message ready to send.")) {
+                System.out.print("Enter message (max 250 characters): ");
+                String text = input.nextLine();
+                lengthMessage = current.checkMessageLength(text);
+                System.out.println(lengthMessage);
+            }
+
+            System.out.println("Message Hash: " + current.createMessageHash());
+            System.out.println("1) Send Message");
+            System.out.println("2) Disregard Message");
+            System.out.println("3) Store Message to send later");
+            System.out.print("Select an option: ");
+            int action = Integer.parseInt(input.nextLine().trim());
+            System.out.println(current.SentMessage(action));
+
+            if (action == 1) {
+                System.out.println("Message ID: " + current.getMessageID());
+                System.out.println("Message Hash: " + current.getMessageHash());
+                System.out.println("Recipient: " + current.getRecipient());
+                System.out.println("Message: " + current.getMessageText());
+            }
+        }
+
+        System.out.println("Total messages sent: " + tracker.returnTotalMessagess());}
+    
+        }
+
 
    
 

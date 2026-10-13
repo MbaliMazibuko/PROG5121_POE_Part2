@@ -175,4 +175,8 @@ public class Message {
         return messageText;
     
     }
+
+    void setMessageNumber(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
