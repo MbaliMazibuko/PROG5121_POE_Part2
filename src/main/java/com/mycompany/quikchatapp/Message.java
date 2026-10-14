@@ -123,6 +123,7 @@ public class Message {
                     + "Message Hash: " + messageHash + "\n"
                     + "Recipient: " + recipient + "\n"
                     + "Message: " + messageText + "\n\n";
+                   
             return "Message successfully sent.";
         } else if (choice == 2) {
             return "Press 0 to delete the message.";

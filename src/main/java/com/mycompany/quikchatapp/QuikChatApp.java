@@ -218,6 +218,7 @@ System.out.print("Enter first name: ");
                 System.out.println("Message Hash: " + current.getMessageHash());
                 System.out.println("Recipient: " + current.getRecipient());
                 System.out.println("Message: " + current.getMessageText());
+                System.out.println(current.SentMessage(action));
             }
         }
 
