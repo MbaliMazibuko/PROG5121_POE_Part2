@@ -150,7 +150,10 @@ System.out.print("Enter first name: ");
     }
 
     private static void quickChatMenu(Scanner input) {
-        System.out.println("Welcome to QuickChat.");
+        
+        System.out.println("========================================");
+        System.out.println("          Welcome to QuickChat.");
+        System.out.println("========================================");
         boolean inChat = true;
 
         while (inChat) {

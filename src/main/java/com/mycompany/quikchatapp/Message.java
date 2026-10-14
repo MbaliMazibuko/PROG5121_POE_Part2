@@ -13,7 +13,7 @@ import java.util.Random;
  * @author user
  */
 public class Message {
-    
+
     private String messageID;
     private int messageNumber;
     private String recipient;
@@ -173,12 +173,19 @@ public class Message {
 
     public String getMessageText() {
         return messageText;
+    }
+
+    public void setMessageID(String messageID) {
+        this.messageID = messageID;
+    }
+
+    public void setMessageNumber(int messageNumber) {
+        this.messageNumber = messageNumber;
+    }
+
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
+    }
     
-    }
-
-    void setMessageNumber(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     
 }
