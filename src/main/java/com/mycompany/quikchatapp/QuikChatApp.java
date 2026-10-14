@@ -146,7 +146,10 @@ System.out.print("Enter first name: ");
             if (checker.test(value)) {
                 return value;
             }
-     private static void quickChatMenu(Scanner input){
+        }
+    }
+
+    private static void quickChatMenu(Scanner input) {
         System.out.println("Welcome to QuickChat.");
         boolean inChat = true;
 
