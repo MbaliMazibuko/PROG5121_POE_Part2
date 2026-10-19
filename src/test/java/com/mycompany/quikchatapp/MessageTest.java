@@ -77,6 +77,15 @@ public class MessageTest {
         assertEquals("Message successfully stored.", message.SentMessage(3));
     }
     
+    @Test
+    public void returnTotalMessageAfter(){
+        Message message= new Message();
+        int before= message.returnTotalMessagess();
+        message.SentMessage(1);
+        assertEquals(before + 1, message.returnTotalMessagess());
+        
+    }
+    
     
     
 }
